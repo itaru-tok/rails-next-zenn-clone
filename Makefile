@@ -20,7 +20,7 @@ lint.javascript:
 
 up:
 	docker-compose up -d
-	docker-compose exec rails bundle exec rails s -b 0.0.0.0 -p 3001
+	docker-compose exec rails bundle exec rails s -b 0.0.0.0
 
 db.reset:
 	docker-compose run rails bundle exec rake db:drop
