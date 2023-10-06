@@ -1,66 +1,44 @@
 .DEFAULT_GOAL := usage
 
+# manage Docker service
+build:
+	docker compose build --no-cache 
+
 bash:
 	docker compose exec rails /bin/bash
+
+bash.next:
+	docker compose exec next /bin/bash
+
+up:
+	docker compose up -d
+	docker-compose exec rails bundle exec rails s -b 0.0.0.0
+
+up.next:
+	docker compose up -d
+	docker-compose exec next npm run dev
 
 down:
 	docker compose down
 
-# for intel
-init:
-	docker compose build
-	docker compose run rails bundle install
-	docker compose run rails bundle exec rake db:create
-	docker compose run rails bundle exec rake db:railsly
-	docker compose run rails bundle exec rake db:railsly RAILS_ENV=test
-	docker compose run rails bundle exec rake db:seed_fu
-
-lint.javascript:
-	docker compose run rails yarn format
-
-up:
-	docker compose up -d
-	docker compose exec rails /bin/bash
-	bundle exec rails s -b 0.0.0.0
-
-db.reset:
-	docker compose run rails bundle exec rake db:drop
-	docker compose run rails bundle exec rake db:create
-	docker compose run rails bundle exec rake db:railsly
-	docker compose run rails bundle exec rake db:railsly RAILS_ENV=test
-	docker compose run rails bundle exec rake db:seed_fu
-
+# gems
 bundle.install:
 	docker compose run rails bundle install
 
 rspec:
-	docker compose run -e rails bundle exec rspec spec
-
-db.railsly:
-	docker compose run rails bundle exec rake db:railsly
-	docker compose run rails bundle exec rake db:railsly RAILS_ENV=test
+	docker compose run rails rspec spec
 
 rubocop:
-	docker compose run rails bundle exec rubocop
+	docker compose run rails rubocop
 
 rubocop.correct:
-	docker compose run rails bundle exec rubocop -A
+	docker compose run rails rubocop -A
 
-# be common
-erblint:
-	docker compose run rails bundle exec erblint --lint-all
+lint:
+	docker compose run next npm run lint
 
-erblint.correct:
-	docker compose run rails bundle exec erblint --lint-all -a
-
-test: rubocop rspec
-
-down.all:
-	if [ -n "`docker ps -q`" ]; then docker kill `docker ps -q`; fi
-	docker container prune -f
+lint.correct:
+	docker compose run next npm run format
 
 console:
 	docker compose exec rails bundle exec rails c
-
-webpack:
-	docker compose exec rails bin/webpack
