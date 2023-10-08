@@ -1,10 +1,10 @@
-import { css } from "@emotion/react";
-import { Button } from "@mui/material";
-import type { NextPage } from "next";
+import { css } from '@emotion/react'
+import { Button } from '@mui/material'
+import type { NextPage } from 'next'
 
 const buttonCss = css({
-  padding: "24px",
-});
+  padding: '24px',
+})
 
 const HelloMui: NextPage = () => {
   return (
@@ -19,7 +19,7 @@ const HelloMui: NextPage = () => {
         Button3
       </Button>
     </>
-  );
-};
+  )
+}
 
-export default HelloMui;
+export default HelloMui
