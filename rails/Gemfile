@@ -23,6 +23,9 @@ gem 'devise-i18n'
 # ユーザーのトークン認証を提供する
 gem 'devise_token_auth'
 
+# ページネーション機能を提供する
+gem "kaminari"
+
 # MySQLに接続する
 gem 'mysql2', '~> 0.5'
 
@@ -44,7 +47,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 group :development, :test do
   # 開発環境でメール送信をテストする
   gem 'letter_opener_web'
-
   # pry コンソールを使えるようにする。
   gem 'pry-byebug'
   gem 'pry-doc'
@@ -58,4 +60,6 @@ group :development, :test do
   # テスト用データを作成する
   gem 'factory_bot_rails'
   gem 'faker'
+  # N+1発生時にアラートを表示する
+   gem "bullet"
 end
