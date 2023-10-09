@@ -24,7 +24,7 @@ gem 'devise-i18n'
 gem 'devise_token_auth'
 
 # ページネーション機能を提供する
-gem "kaminari"
+gem 'kaminari'
 
 # MySQLに接続する
 gem 'mysql2', '~> 0.5'
@@ -61,5 +61,5 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   # N+1発生時にアラートを表示する
-   gem "bullet"
+  gem 'bullet'
 end
