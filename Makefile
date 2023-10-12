@@ -11,8 +11,10 @@ bash.next:
 	docker compose exec next /bin/bash
 
 up:
+	rm -f /myapp/tmp/pids/server.pid
 	docker compose up -d
-	docker-compose exec rails bundle exec rails s -b 0.0.0.0
+	docker-compose exec rails bundle exec rails s -b 0.0.0.0 -p 3001
+
 
 up.next:
 	docker compose up -d

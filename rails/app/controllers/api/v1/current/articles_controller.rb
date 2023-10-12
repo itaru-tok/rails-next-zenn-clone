@@ -30,9 +30,9 @@ module Api
 
         private
 
-        def article_params
-          params.require(:article).permit(:title, :content, :status)
-        end
+          def article_params
+            params.require(:article).permit(:title, :content, :status)
+          end
       end
     end
   end
