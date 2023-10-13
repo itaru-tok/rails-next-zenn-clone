@@ -15,7 +15,6 @@ up:
 	docker compose up -d
 	docker-compose exec rails bundle exec rails s -b 0.0.0.0
 
-
 up.next:
 	docker compose up -d
 	docker-compose exec next npm run dev
