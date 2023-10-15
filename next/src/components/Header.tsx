@@ -16,12 +16,12 @@ import {
 } from '@mui/material'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 import { useState } from 'react'
 import { useUserState } from '@/hooks/useGlobalState'
 
 const Header = () => {
-  const router = useRouter()
+  // const router = useRouter()
   const [user] = useUserState()
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const open = Boolean(anchorEl)
