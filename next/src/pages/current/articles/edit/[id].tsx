@@ -58,7 +58,7 @@ const CurrentArticlesEdit: NextPage = () => {
   const { id } = router.query
   const { data, error } = useSWR(
     user.isSignedIn && id ? url + id : null,
-    fetcher
+    fetcher,
   )
 
   const article: ArticleProps = useMemo(() => {

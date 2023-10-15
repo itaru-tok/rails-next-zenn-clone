@@ -42,7 +42,7 @@ const CurrentArticleDetail: NextPage = () => {
 
   const { data, error } = useSWR(
     user.isSignedIn && id ? url + id : null,
-    fetcher
+    fetcher,
   )
   if (error) return <Error />
   if (!data) return <Loading />
