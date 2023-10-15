@@ -35,7 +35,7 @@ const Header = () => {
 
   return (
     <AppBar
-      position='static'
+      position="static"
       sx={{
         backgroundColor: 'white',
         color: 'black',
@@ -43,7 +43,7 @@ const Header = () => {
         py: '12px',
       }}
     >
-      <Container maxWidth='lg' sx={{ px: 2 }}>
+      <Container maxWidth="lg" sx={{ px: 2 }}>
         <Box
           sx={{
             display: 'flex',
@@ -52,18 +52,18 @@ const Header = () => {
           }}
         >
           <Box>
-            <Link href='/'>
-              <Image src='/logo.png' width={133} height={40} alt='logo' />
+            <Link href="/">
+              <Image src="/logo.png" width={133} height={40} alt="logo" />
             </Link>
           </Box>
           {user.isFetched && (
             <>
               {!user.isSignedIn && (
                 <Box>
-                  <Link href='/sign_in'>
+                  <Link href="/sign_in">
                     <Button
-                      color='primary'
-                      variant='contained'
+                      color="primary"
+                      variant="contained"
                       sx={{
                         color: 'white',
                         textTransform: 'none',
@@ -76,8 +76,8 @@ const Header = () => {
                     </Button>
                   </Link>
                   <Button
-                    color='primary'
-                    variant='outlined'
+                    color="primary"
+                    variant="outlined"
                     sx={{
                       textTransform: 'none',
                       fontSize: 16,
@@ -100,8 +100,8 @@ const Header = () => {
                   </IconButton>
                   <Box sx={{ ml: 2 }}>
                     <Button
-                      color='primary'
-                      variant='contained'
+                      color="primary"
+                      variant="contained"
                       sx={{
                         color: 'white',
                         textTransform: 'none',
@@ -116,7 +116,7 @@ const Header = () => {
                   </Box>
                   <Menu
                     anchorEl={anchorEl}
-                    id='account-menu'
+                    id="account-menu"
                     open={open}
                     onClose={handleClose}
                     onClick={handleClose}
@@ -129,14 +129,14 @@ const Header = () => {
                     <Divider />
                     <MenuItem>
                       <ListItemIcon>
-                        <ArticleIcon fontSize='small' />
+                        <ArticleIcon fontSize="small" />
                       </ListItemIcon>
                       記事の管理
                     </MenuItem>
-                    <Link href='/sign_out'>
+                    <Link href="/sign_out">
                       <MenuItem>
                         <ListItemIcon>
-                          <Logout fontSize='small' />
+                          <Logout fontSize="small" />
                         </ListItemIcon>
                         サインアウト
                       </MenuItem>
