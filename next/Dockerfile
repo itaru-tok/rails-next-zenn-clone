@@ -1,2 +1,2 @@
-FROM node:19.4.0
+FROM --platform=linux/amd64 node:19.4.0
 WORKDIR /app

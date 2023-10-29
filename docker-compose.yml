@@ -1,4 +1,4 @@
-version: "3"
+version: '3'
 services:
   db:
     image: mysql:8.0.32
@@ -8,7 +8,7 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: password
     ports:
-      - "3307:3306"
+      - '3307:3306'
     volumes:
       - mysql_data:/var/lib/mysql
   next:
@@ -19,7 +19,7 @@ services:
     volumes:
       - ./next:/app
     ports:
-      - "8000:3000"
+      - '8000:3000'
   rails:
     build:
       context: ./rails
@@ -27,7 +27,7 @@ services:
     volumes:
       - ./rails:/myapp
     ports:
-      - 3001:3000
+      - 3000:3000
     depends_on:
       - db
     tty: true
