@@ -6,8 +6,8 @@ name: Continuous Integration
 on:
   push:
     branches-ignore:
-       - "main"
-   workflow_call:
+      - 'main'
+  workflow_call:
 
 # 当 workflow が行う処理
 jobs:
