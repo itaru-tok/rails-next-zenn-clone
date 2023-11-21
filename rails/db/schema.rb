@@ -47,6 +47,4 @@ ActiveRecord::Schema[7.0].define(version: 20_231_008_225_158) do
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
     t.index %w[uid provider], name: 'index_users_on_uid_and_provider', unique: true
   end
-
-  add_foreign_key 'articles', 'users'
 end
