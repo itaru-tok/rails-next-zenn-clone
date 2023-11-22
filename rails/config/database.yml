@@ -17,12 +17,6 @@ test:
   database: myapp_test
   password: password
 
-# AWSの設定
-# production:
-#   <<: *default
-#   database: myapp_production
-#   url: <%= Rails.application.credentials.production.database_url %>
-
 production:
   <<: *default
   username: <%= Rails.application.credentials.planetscale&.fetch(:username) %>
