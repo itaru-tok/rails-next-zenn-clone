@@ -3,7 +3,7 @@ threads threads_count, threads_count
 environment ENV.fetch("RAILS_ENV") { "development" }
 
 # Specifies the `pidfile` that Puma will use.
-pidfile ENV.fetch("PIDFILE") { "rails/tmp/pids/server.pid" }
+pidfile ENV.fetch("PIDFILE") { "/myapp/tmp/pids/server.pid" }
 
 plugin :tmp_restart
 
